@@ -1,0 +1,26 @@
+{
+  "name": "ride-my-way-graphql",
+  "version": "1.0.0",
+  "description": "A car pooling web application built with graphql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/CEOehis/ride-my-way-graphql.git"
+  },
+  "keywords": [
+    "graphql",
+    "nodejs"
+  ],
+  "author": "Celestine Ekoh-Ordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CEOehis/ride-my-way-graphql/issues"
+  },
+  "homepage": "https://github.com/CEOehis/ride-my-way-graphql#readme",
+  "dependencies": {
+    "graphql-yoga": "^1.16.7"
+  }
+}
