@@ -1,0 +1,16 @@
+type Query {
+  info: String!
+  getUsers: [User!]
+}
+
+type Mutation {
+  signUp(username: String!, fullName: String!, email: String!, password: String!): User!
+}
+
+type User {
+  id: ID!
+  username: String!
+  fullName: String!
+  email: String!
+  phone: String
+}
