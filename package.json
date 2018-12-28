@@ -4,6 +4,8 @@
   "description": "A car pooling web application built with graphql",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon --watch src --exec babel-node ./src/index.js",
+    "db:migrate": "sequelize db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,6 +23,16 @@
   },
   "homepage": "https://github.com/CEOehis/ride-my-way-graphql#readme",
   "dependencies": {
-    "graphql-yoga": "^1.16.7"
+    "dotenv": "^6.2.0",
+    "graphql-yoga": "^1.16.7",
+    "pg": "^7.7.1",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.9"
   }
 }
