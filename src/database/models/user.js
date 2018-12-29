@@ -50,5 +50,9 @@ module.exports = (sequelize, DataTypes) => {
     return await bcrypt.hash(this.password, saltRounds);
   };
 
+  User.prototype.validatePassword = async function (password) {
+    return await bcrypt.compareSync(password, this.password);
+  };
+
   return User;
 };
