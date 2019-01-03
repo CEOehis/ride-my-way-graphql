@@ -26,6 +26,7 @@
     "bcrypt": "^3.0.3",
     "dotenv": "^6.2.0",
     "graphql-yoga": "^1.16.7",
+    "jsonwebtoken": "^8.4.0",
     "pg": "^7.7.1",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0"

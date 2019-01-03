@@ -1,12 +1,18 @@
 import { GraphQLServer } from 'graphql-yoga';
 import models from './database/models';
 import resolvers from './resolvers';
+import { getAuthenticatedUser } from './utils/auth';
 
 const server = new GraphQLServer({
   typeDefs: './src/schema/schema.graphql',
   resolvers,
-  context: {
-    models
+  context: async ({ request }) => {
+    const authedUser = await getAuthenticatedUser(request);
+
+    return {
+      models,
+      authedUser,
+    }
   }
 });
 
