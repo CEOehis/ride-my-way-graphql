@@ -1,3 +1,5 @@
+import { generateToken } from '../utils/auth';
+
 module.exports = {
   signUp: async function signUp(parent, args, { models }) {
     const { username, fullName, email, password } = args;
@@ -8,7 +10,12 @@ module.exports = {
       password,
     });
 
-    return user;
+    const token = generateToken(user, '30m');
+
+    return {
+      user,
+      token,
+    };
   },
 
   signIn: async function signIn(parent, args, { models }) {
@@ -29,6 +36,11 @@ module.exports = {
       throw new Error('Invalid login or password');
     }
 
-    return user;
+    const token = generateToken(user, '30m');
+
+    return {
+      user,
+      token,
+    };
   }
 };
