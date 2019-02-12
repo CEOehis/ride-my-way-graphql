@@ -12,7 +12,7 @@ export const decodeToken = async (token) => {
   try {
     return await jwt.verify(token, process.env.SECRET);
   } catch (e) {
-    throw new Error('Your session has expired');
+    return new Error('Your session has expired');
   }
 }
 

@@ -3,8 +3,9 @@ import { generateToken } from '../../utils/auth';
 export default {
   Query: {
     getUsers: async (_, __, { models, authedUser }) => {
-      if(!authedUser) {
-        throw new Error('You are not authenticated');
+      if(!authedUser || authedUser instanceof Error) {
+        const errorMessage = authedUser.message || 'You are not authenticated';
+        throw new Error(errorMessage);
       }
       const users = await models.User.findAll();
       return users;
