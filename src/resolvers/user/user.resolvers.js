@@ -4,7 +4,7 @@ export default {
   Query: {
     getUsers: async (_, __, { models, authedUser }) => {
       if(!authedUser || authedUser instanceof Error) {
-        const errorMessage = authedUser.message || 'You are not authenticated';
+        const errorMessage = authedUser ? authedUser.message : 'You are not authenticated';
         throw new Error(errorMessage);
       }
       const users = await models.User.findAll();
