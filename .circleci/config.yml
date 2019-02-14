@@ -5,6 +5,8 @@
 version: 2
 jobs:
   build:
+    environment:
+      CC_TEST_REPORTER_ID: f6f64ab597229b3708c2a5c4873d94e87a311f2830b431264c2c161ac6717096
     docker:
       # specify the version you desire here
       - image: circleci/node:10.14.2
@@ -44,4 +46,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: yarn test --coverage
