@@ -1,17 +1,20 @@
-import { runQuery } from '../../../../test/helpers';
+import { runQuery, resetDB } from '../../../../test/helpers';
 import { User, sequelize } from '../../../database/models';
 
 describe('User', () => {
   let user;
   beforeEach(async () => {
-    const isTest = process.env.NODE_ENV === 'test';
-    await sequelize.sync({ force: isTest});
+    await resetDB();
     user = await User.create({
       username: 'testuser',
       fullName: 'test user',
       password: 'password',
       email: 'testuser@mail.com'
     });
+  });
+
+  afterEach(async () => {
+    await resetDB();
   });
 
   it('should getUsers', async () => {

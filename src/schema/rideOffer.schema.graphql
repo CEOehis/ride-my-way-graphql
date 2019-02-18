@@ -1,0 +1,21 @@
+type RideOffer {
+  id: ID!
+  origin: String!
+  destination: String!
+  departureDate: String!
+  departureTime: String!
+  availableSeats: Int!
+  offeredBy: User!
+}
+
+input NewRideOffer {
+  origin: String!
+  destination: String!
+  departureDate: String!
+  departureTime: String!
+  availableSeats: String!
+}
+
+type Mutation {
+  createRideOffer(input: NewRideOffer): RideOffer
+}
