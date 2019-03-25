@@ -4,8 +4,11 @@
   "description": "A car pooling web application built with graphql",
   "main": "index.js",
   "scripts": {
+    "build": "NODE_ENV=PRODUCTION babel src -d dist --copy-files",
+    "heroku-postbuild": "npm run build && npm run db:migrate",
     "dev": "nodemon --watch src --exec babel-node ./src/index.js",
     "db:migrate": "sequelize db:migrate",
+    "start": "NODE_ENV=production node dist/index.js",
     "test": "jest --no-cache  --detectOpenHandles --runInBand --forceExit",
     "test:watch": "jest --no-cache  --detectOpenHandles --runInBand --watch"
   },
