@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/CEOehis/ride-my-way-graphql#readme",
   "dependencies": {
-    "bcrypt": "^3.0.3",
+    "bcrypt": "^5.0.0",
     "dotenv": "^6.2.0",
     "graphql-yoga": "^1.16.7",
     "jsonwebtoken": "^8.4.0",
